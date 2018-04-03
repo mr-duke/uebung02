@@ -31,15 +31,17 @@ public class StringSetImpl implements StringSet {
     public boolean add(String s) {
         Element ele = new Element(s, null, null);
 
-        if (root == null)
+        if (root == null) {
             root = ele;
+            return true;
+        }
 
         Element it = root;
 
         while(it != null ){
             if (it.value.compareTo(ele.value) == 0)
                 return false;
-            else if (it.value.compareTo(ele.value) < 0) {
+            else if (it.value.compareTo(ele.value) > 0) {
                 if(it.left == null) {
                     it.left = ele;
                     return true;
@@ -68,7 +70,7 @@ public class StringSetImpl implements StringSet {
         while (it !=  null) {
             if (it.value.compareTo(s) == 0)
                 return true;
-            else if (it.value.compareTo(s) < 0){
+            else if (it.value.compareTo(s) > 0){
                 it = it.left;
             }
             else {
@@ -88,15 +90,16 @@ public class StringSetImpl implements StringSet {
 
         Element it = root;
         while (it != null) {
-            if(it.value.compareTo(s) < 0){
-                if (it.left != null && it.left.value.compareTo(s) == 0)
+            if(it.value.compareTo(s) > 0){
+                if (it.left != null && it.left.value.equals(s))
                     return removeElement(it, it.left);
                 it = it.left;
             }
-            else
-                if(it.right != null && it.right.value.compareTo(s) == 0)
+            else {
+                if(it.right != null && it.right.value.equals(s))
                     return removeElement(it, it.right);
                 it = it.right;
+            }
         }
         throw new NoSuchElementException();
     }
@@ -145,7 +148,7 @@ public class StringSetImpl implements StringSet {
         while (it != null){
             if (it.value.compareTo(e.value) == 0)
                 return;
-            else if (it.value.compareTo(e.value) < 0){
+            else if (it.value.compareTo(e.value) > 0){
                 if (it.left == null) {
                     it.left = e;
                     return;
