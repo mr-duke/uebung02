@@ -4,10 +4,9 @@ import java.util.NoSuchElementException;
 
 public class StringSetImpl implements StringSet {
 
-    /* Charly Test
+    /* Charly super Test
      auf Testbranch
-    aller letzter Git Test
-    nonsense*/
+ */
 
     class Element {
         String value;
