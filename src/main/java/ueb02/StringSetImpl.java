@@ -4,6 +4,7 @@ import java.util.NoSuchElementException;
 
 public class StringSetImpl implements StringSet {
 
+    // Charly Test
     class Element {
         String value;
         Element left, right;
