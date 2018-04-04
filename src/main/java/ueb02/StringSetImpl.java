@@ -6,6 +6,7 @@ public class StringSetImpl implements StringSet {
 
     // Charly Test
     // auf Testbranch
+    // master
 
     class Element {
         String value;
