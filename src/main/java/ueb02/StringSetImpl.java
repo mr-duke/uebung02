@@ -6,7 +6,8 @@ public class StringSetImpl implements StringSet {
 
     /* Charly Test
      auf Testbranch
-    aller letzter Git Test */
+    aller letzter Git Test
+    nonsense*/
 
     class Element {
         String value;
